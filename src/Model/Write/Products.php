@@ -293,6 +293,8 @@ class Products implements WriterInterface
         // Explode values if source is used (multi select)
         if ($attribute->getFrontendInput() == 'multiselect' || $attribute->getFrontendInput() == 'select') {
             $values = $this->explodeValues($values);
+        } else if (!$attribute->getSourceModel()) {
+            return $values;
         }
 
         if (!$attribute->getSourceModel()) {
