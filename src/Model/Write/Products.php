@@ -297,10 +297,6 @@ class Products implements WriterInterface
             return $values;
         }
 
-        if (!$attribute->getSourceModel()) {
-            return $values;
-        }
-
         $result = [];
         foreach ($values as $value) {
             $map = $this->getAttributeOptionMap($storeId, $attribute);
